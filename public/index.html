@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTTP sync</title>
+</head>
+<body style="width: 100%; text-align: center;">
+  <section style="width: 50%; position: relative; float: left;">
+  <h2>No actualiza</h2>
+  <iframe id="first" width="600px" height="368px" frameborder="0" scrolling="no" class="mp4downloader_tagChecked" name="loginbox" src="http://deimos.dgi.uanl.mx/cgi-bin/wspd_cgi.sh/sso.htm" marginwidth="0" marginheight="0">
+  </iframe>
+  </section>
+  <section style="width: 50%; position: relative; float: left;">
+  <h2>Actualiza en <span id="seconds">60</span> segundos</h2>
+  <iframe id="second" width="600px" height="368px" frameborder="0" scrolling="no" class="mp4downloader_tagChecked" name="loginbox" src="http://deimos.dgi.uanl.mx/cgi-bin/wspd_cgi.sh/sso.htm" marginwidth="0" marginheight="0">
+  </iframe>
+  </section>
+  <script>
+  window.onload = function(){
+
+    setInterval(function(){
+      var s = document.getElementById('seconds');
+      var num = s.innerHTML;
+      var newNum = parseInt(num) - 1;
+      s.innerHTML = newNum.toString();
+    }, 1000);
+
+    setInterval(function(){
+      var f = document.getElementById('second');
+      f.src = f.src;
+      var s = document.getElementById('seconds');
+      s.innerHTML = "59";
+    }, 60000);
+
+  };
+  </script>
+</body>
+</html>

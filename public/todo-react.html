@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Todo react</title>
+  <script src="js/react.min.js"></script>
+  <script src="js/react-dom.min.js"></script>
+</head>
+<body style="width: 90%; text-align: center;">
+  <section style="width: 50%; left: 20%; position: relative; float: left;">
+    <div id="todo-container">
+    </div>
+  </section>
+  <script src="js/todo-react.js"></script>
+  <script>
+    var container = document.getElementById('todo-container');
+    var TodoListFactory = React.createFactory(TodoList);
+    ReactDOM.render(TodoListFactory(null),container);
+  </script>
+</body>
+</html>
